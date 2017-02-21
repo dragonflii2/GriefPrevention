@@ -90,7 +90,7 @@ public abstract class DataStore
     ConcurrentHashMap<UUID, Boolean> softMuteMap = new ConcurrentHashMap<UUID, Boolean>();
     
     //world guard reference, if available
-    private WorldGuardWrapper worldGuard = null;
+    //private WorldGuardWrapper worldGuard = null;
     
     protected int getSchemaVersion()
     {
@@ -153,22 +153,23 @@ public abstract class DataStore
         }
 		
 		//load list of soft mutes
-        this.loadSoftMutes();
+        //this.loadSoftMutes();
         
         //make a note of the data store schema version
 		this.setSchemaVersion(latestSchemaVersion);
 		
 		//try to hook into world guard
-		try
-		{
-		    this.worldGuard = new WorldGuardWrapper();
-		    GriefPrevention.AddLogEntry("Successfully hooked into WorldGuard.");
-		}
+		//try
+		//{
+		    //this.worldGuard = new WorldGuardWrapper();
+		    //GriefPrevention.AddLogEntry("Successfully hooked into WorldGuard.");
+		//}
 		//if failed, world guard compat features will just be disabled.
-		catch(ClassNotFoundException exception){ }
-		catch(NoClassDefFoundError exception){ }
+		//catch(ClassNotFoundException exception){ }
+		//catch(NoClassDefFoundError exception){ }
 	}
 	
+	/*
 	private void loadSoftMutes()
 	{
 	    File softMuteFile = new File(softMuteFilePath);
@@ -303,6 +304,8 @@ public abstract class DataStore
         }
         catch(IOException exception) {}
 	}
+	
+	*/
 	
     //removes cached player data from memory
 	synchronized void clearCachedPlayerData(UUID playerID)
@@ -840,15 +843,15 @@ public abstract class DataStore
 		}
 		
 		//if worldguard is installed, also prevent claims from overlapping any worldguard regions
-		if(GriefPrevention.instance.config_claims_respectWorldGuard && this.worldGuard != null && creatingPlayer != null)
-		{
-		    if(!this.worldGuard.canBuild(newClaim.lesserBoundaryCorner, newClaim.greaterBoundaryCorner, creatingPlayer))
-		    {
-                result.succeeded = false;
-                result.claim = null;
-                return result;
-            }
-		}
+		//if(GriefPrevention.instance.config_claims_respectWorldGuard && this.worldGuard != null && creatingPlayer != null)
+		//{
+		    //if(!this.worldGuard.canBuild(newClaim.lesserBoundaryCorner, newClaim.greaterBoundaryCorner, creatingPlayer))
+		    //{
+                //result.succeeded = false;
+                //result.claim = null;
+                //return result;
+            //}
+		//}
 
 		//otherwise add this new claim to the data store to make it effective
 		this.addClaim(newClaim, true);
@@ -938,6 +941,10 @@ public abstract class DataStore
 		//save changes
 		this.saveClaim(claim);
 	}
+
+	/*mde 
+	 * remove seige code
+	 
 
 	//starts a siege on a claim
 	//does NOT check siege cooldowns, see onCooldown() below
@@ -1147,6 +1154,7 @@ public abstract class DataStore
 		playerData.siegeData.claims.add(claim);
 		claim.siegeData = playerData.siegeData;
 	}		
+	mde */
 	
 	//deletes all claims owned by a player
 	synchronized public void deleteClaimsForPlayer(UUID playerID, boolean releasePets)
@@ -1434,18 +1442,18 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.AdjustBlocksAllSuccess, "Adjusted all online players' bonus claim blocks by {0}.", "0: adjustment amount");
 		this.addDefault(defaults, Messages.NotTrappedHere, "You can build here.  Save yourself.", null);
 		this.addDefault(defaults, Messages.RescuePending, "If you stay put for 10 seconds, you'll be teleported out.  Please wait.", null);
-		this.addDefault(defaults, Messages.NonSiegeWorld, "Siege is disabled here.", null);
-		this.addDefault(defaults, Messages.AlreadySieging, "You're already involved in a siege.", null);
-		this.addDefault(defaults, Messages.AlreadyUnderSiegePlayer, "{0} is already under siege.  Join the party!", "0: defending player");
-		this.addDefault(defaults, Messages.NotSiegableThere, "{0} isn't protected there.", "0: defending player");
-		this.addDefault(defaults, Messages.SiegeTooFarAway, "You're too far away to siege.", null);
-		this.addDefault(defaults, Messages.NoSiegeYourself, "You cannot siege yourself, don't be silly", null);
-		this.addDefault(defaults, Messages.NoSiegeDefenseless, "That player is defenseless.  Go pick on somebody else.", null);
-		this.addDefault(defaults, Messages.AlreadyUnderSiegeArea, "That area is already under siege.  Join the party!", null);
-		this.addDefault(defaults, Messages.NoSiegeAdminClaim, "Siege is disabled in this area.", null);
-		this.addDefault(defaults, Messages.SiegeOnCooldown, "You're still on siege cooldown for this defender or claim.  Find another victim.", null);
-		this.addDefault(defaults, Messages.SiegeAlert, "You're under siege!  If you log out now, you will die.  You must defeat {0}, wait for him to give up, or escape.", "0: attacker name");
-		this.addDefault(defaults, Messages.SiegeConfirmed, "The siege has begun!  If you log out now, you will die.  You must defeat {0}, chase him away, or admit defeat and walk away.", "0: defender name");
+		//this.addDefault(defaults, Messages.NonSiegeWorld, "Siege is disabled here.", null);
+		//this.addDefault(defaults, Messages.AlreadySieging, "You're already involved in a siege.", null);
+		//this.addDefault(defaults, Messages.AlreadyUnderSiegePlayer, "{0} is already under siege.  Join the party!", "0: defending player");
+		//this.addDefault(defaults, Messages.NotSiegableThere, "{0} isn't protected there.", "0: defending player");
+		//this.addDefault(defaults, Messages.SiegeTooFarAway, "You're too far away to siege.", null);
+		//this.addDefault(defaults, Messages.NoSiegeYourself, "You cannot siege yourself, don't be silly", null);
+		//this.addDefault(defaults, Messages.NoSiegeDefenseless, "That player is defenseless.  Go pick on somebody else.", null);
+		//this.addDefault(defaults, Messages.AlreadyUnderSiegeArea, "That area is already under siege.  Join the party!", null);
+		//this.addDefault(defaults, Messages.NoSiegeAdminClaim, "Siege is disabled in this area.", null);
+		//this.addDefault(defaults, Messages.SiegeOnCooldown, "You're still on siege cooldown for this defender or claim.  Find another victim.", null);
+		//this.addDefault(defaults, Messages.SiegeAlert, "You're under siege!  If you log out now, you will die.  You must defeat {0}, wait for him to give up, or escape.", "0: attacker name");
+		//this.addDefault(defaults, Messages.SiegeConfirmed, "The siege has begun!  If you log out now, you will die.  You must defeat {0}, chase him away, or admit defeat and walk away.", "0: defender name");
 		this.addDefault(defaults, Messages.AbandonClaimMissing, "Stand in the claim you want to delete, or consider /AbandonAllClaims.", null);
 		this.addDefault(defaults, Messages.NotYourClaim, "This isn't your claim.", null);
 		this.addDefault(defaults, Messages.DeleteTopLevelClaim, "To delete a subdivision, stand inside it.  Otherwise, use /AbandonTopLevelClaim to delete this claim and all subdivisions.", null);		
@@ -1467,13 +1475,13 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.DonateItemsInstruction, "To give away the item(s) in your hand, left-click the chest again.", null);
 		this.addDefault(defaults, Messages.ChestFull, "This chest is full.", null);
 		this.addDefault(defaults, Messages.DonationSuccess, "Item(s) transferred to chest!", null);
-		this.addDefault(defaults, Messages.PlayerTooCloseForFire2, "You can't start a fire this close to another player.", null);
+		//this.addDefault(defaults, Messages.PlayerTooCloseForFire2, "You can't start a fire this close to another player.", null);
 		this.addDefault(defaults, Messages.TooDeepToClaim, "This chest can't be protected because it's too deep underground.  Consider moving it.", null);
 		this.addDefault(defaults, Messages.ChestClaimConfirmation, "This chest is protected.", null);
 		this.addDefault(defaults, Messages.AutomaticClaimNotification, "This chest and nearby blocks are protected from breakage and theft.", null);
 		this.addDefault(defaults, Messages.UnprotectedChestWarning, "This chest is NOT protected.  Consider using a golden shovel to expand an existing claim or to create a new one.", null);
-		this.addDefault(defaults, Messages.ThatPlayerPvPImmune, "You can't injure defenseless players.", null);
-		this.addDefault(defaults, Messages.CantFightWhileImmune, "You can't fight someone while you're protected from PvP.", null);
+		//this.addDefault(defaults, Messages.ThatPlayerPvPImmune, "You can't injure defenseless players.", null);
+		//this.addDefault(defaults, Messages.CantFightWhileImmune, "You can't fight someone while you're protected from PvP.", null);
 		this.addDefault(defaults, Messages.NoDamageClaimedEntity, "That belongs to {0}.", "0: owner name");
 		this.addDefault(defaults, Messages.ShovelBasicClaimMode, "Shovel returned to basic claims mode.", null);
 		this.addDefault(defaults, Messages.RemainingBlocks, "You may claim up to {0} more blocks.", "0: remaining blocks");
@@ -1481,19 +1489,19 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.SurvivalBasicsVideo2, "Click for Land Claim Help: {0}", "{0}: video URL");
 		this.addDefault(defaults, Messages.TrappedChatKeyword, "trapped", "When mentioned in chat, players get information about the /trapped command.");
 		this.addDefault(defaults, Messages.TrappedInstructions, "Are you trapped in someone's land claim?  Try the /trapped command.", null);
-		this.addDefault(defaults, Messages.PvPNoDrop, "You can't drop items while in PvP combat.", null);
-		this.addDefault(defaults, Messages.SiegeNoTeleport, "You can't teleport out of a besieged area.", null);
-		this.addDefault(defaults, Messages.BesiegedNoTeleport, "You can't teleport into a besieged area.", null);
-		this.addDefault(defaults, Messages.SiegeNoContainers, "You can't access containers while involved in a siege.", null);
-		this.addDefault(defaults, Messages.PvPNoContainers, "You can't access containers during PvP combat.", null);
-		this.addDefault(defaults, Messages.PvPImmunityEnd, "Now you can fight with other players.", null);
+		//this.addDefault(defaults, Messages.PvPNoDrop, "You can't drop items while in PvP combat.", null);
+		//this.addDefault(defaults, Messages.SiegeNoTeleport, "You can't teleport out of a besieged area.", null);
+		//this.addDefault(defaults, Messages.BesiegedNoTeleport, "You can't teleport into a besieged area.", null);
+		//this.addDefault(defaults, Messages.SiegeNoContainers, "You can't access containers while involved in a siege.", null);
+		//this.addDefault(defaults, Messages.PvPNoContainers, "You can't access containers during PvP combat.", null);
+		//this.addDefault(defaults, Messages.PvPImmunityEnd, "Now you can fight with other players.", null);
 		this.addDefault(defaults, Messages.NoBedPermission, "{0} hasn't given you permission to sleep here.", "0: claim owner");
 		this.addDefault(defaults, Messages.NoWildernessBuckets, "You may only dump buckets inside your claim(s) or underground.", null);
 		this.addDefault(defaults, Messages.NoLavaNearOtherPlayer, "You can't place lava this close to {0}.", "0: nearby player");
 		this.addDefault(defaults, Messages.TooFarAway, "That's too far away.", null);
 		this.addDefault(defaults, Messages.BlockNotClaimed, "No one has claimed this block.", null);
 		this.addDefault(defaults, Messages.BlockClaimed, "That block has been claimed by {0}.", "0: claim owner");
-		this.addDefault(defaults, Messages.SiegeNoShovel, "You can't use your shovel tool while involved in a siege.", null);
+		//this.addDefault(defaults, Messages.SiegeNoShovel, "You can't use your shovel tool while involved in a siege.", null);
 		this.addDefault(defaults, Messages.RestoreNaturePlayerInChunk, "Unable to restore.  {0} is in that chunk.", "0: nearby player");
 		this.addDefault(defaults, Messages.NoCreateClaimPermission, "You don't have permission to claim land.", null);
 		this.addDefault(defaults, Messages.ResizeClaimTooNarrow, "This new size would be too small.  Claims must be at least {0} blocks wide.", "0: minimum claim width");
@@ -1515,18 +1523,18 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.AbandonClaimAdvertisement, "To delete another claim and free up some blocks, use /AbandonClaim.", null);
 		this.addDefault(defaults, Messages.CreateClaimFailOverlapShort, "Your selected area overlaps an existing claim.", null);
 		this.addDefault(defaults, Messages.CreateClaimSuccess, "Claim created!  Use /trust to share it with friends.", null);
-		this.addDefault(defaults, Messages.SiegeWinDoorsOpen, "Congratulations!  Buttons and levers are temporarily unlocked (five minutes).", null);
+		//this.addDefault(defaults, Messages.SiegeWinDoorsOpen, "Congratulations!  Buttons and levers are temporarily unlocked (five minutes).", null);
 		this.addDefault(defaults, Messages.RescueAbortedMoved, "You moved!  Rescue cancelled.", null);
-		this.addDefault(defaults, Messages.SiegeDoorsLockedEjection, "Looting time is up!  Ejected from the claim.", null);
-		this.addDefault(defaults, Messages.NoModifyDuringSiege, "Claims can't be modified while under siege.", null);
+		//this.addDefault(defaults, Messages.SiegeDoorsLockedEjection, "Looting time is up!  Ejected from the claim.", null);
+		//this.addDefault(defaults, Messages.NoModifyDuringSiege, "Claims can't be modified while under siege.", null);
 		this.addDefault(defaults, Messages.OnlyOwnersModifyClaims, "Only {0} can modify this claim.", "0: owner name");
-		this.addDefault(defaults, Messages.NoBuildUnderSiege, "This claim is under siege by {0}.  No one can build here.", "0: attacker name");
-		this.addDefault(defaults, Messages.NoBuildPvP, "You can't build in claims during PvP combat.", null);
+		//this.addDefault(defaults, Messages.NoBuildUnderSiege, "This claim is under siege by {0}.  No one can build here.", "0: attacker name");
+		//this.addDefault(defaults, Messages.NoBuildPvP, "You can't build in claims during PvP combat.", null);
 		this.addDefault(defaults, Messages.NoBuildPermission, "You don't have {0}'s permission to build here.", "0: owner name");
-		this.addDefault(defaults, Messages.NonSiegeMaterial, "That material is too tough to break.", null);
+		//this.addDefault(defaults, Messages.NonSiegeMaterial, "That material is too tough to break.", null);
 		this.addDefault(defaults, Messages.NoOwnerBuildUnderSiege, "You can't make changes while under siege.", null);
 		this.addDefault(defaults, Messages.NoAccessPermission, "You don't have {0}'s permission to use that.", "0: owner name.  access permission controls buttons, levers, and beds");
-		this.addDefault(defaults, Messages.NoContainersSiege, "This claim is under siege by {0}.  No one can access containers here right now.", "0: attacker name");
+		//this.addDefault(defaults, Messages.NoContainersSiege, "This claim is under siege by {0}.  No one can access containers here right now.", "0: attacker name");
 		this.addDefault(defaults, Messages.NoContainersPermission, "You don't have {0}'s permission to use that.", "0: owner's name.  containers also include crafting blocks");
 		this.addDefault(defaults, Messages.OwnerNameForAdminClaims, "an administrator", "as in 'You don't have an administrator's permission to build here.'");
 		this.addDefault(defaults, Messages.ClaimTooSmallForEntities, "This claim isn't big enough for that.  Try enlarging it.", null);
@@ -1542,9 +1550,9 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.BuildingOutsideClaims, "Other players can build here, too.  Consider creating a land claim to protect your work!", null);
 		this.addDefault(defaults, Messages.TrappedWontWorkHere, "Sorry, unable to find a safe location to teleport you to.  Contact an admin.", null);
 		this.addDefault(defaults, Messages.CommandBannedInPvP, "You can't use that command while in PvP combat.", null);
-		this.addDefault(defaults, Messages.UnclaimCleanupWarning, "The land you've unclaimed may be changed by other players or cleaned up by administrators.  If you've built something there you want to keep, you should reclaim it.", null);
+		//this.addDefault(defaults, Messages.UnclaimCleanupWarning, "The land you've unclaimed may be changed by other players or cleaned up by administrators.  If you've built something there you want to keep, you should reclaim it.", null);
 		this.addDefault(defaults, Messages.BuySellNotConfigured, "Sorry, buying anhd selling claim blocks is disabled.", null);
-		this.addDefault(defaults, Messages.NoTeleportPvPCombat, "You can't teleport while fighting another player.", null);
+		//this.addDefault(defaults, Messages.NoTeleportPvPCombat, "You can't teleport while fighting another player.", null);
 		this.addDefault(defaults, Messages.NoTNTDamageAboveSeaLevel, "Warning: TNT will not destroy blocks above sea level.", null);
 		this.addDefault(defaults, Messages.NoTNTDamageClaims, "Warning: TNT will not destroy claimed blocks.", null);
 		this.addDefault(defaults, Messages.IgnoreClaimsAdvertisement, "To override, use /IgnoreClaims.", null);		
@@ -1553,7 +1561,7 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.ExplosivesDisabled, "This claim is now protected from explosions.  Use /ClaimExplosions again to disable.", null);
 		this.addDefault(defaults, Messages.ExplosivesEnabled, "This claim is now vulnerable to explosions.  Use /ClaimExplosions again to re-enable protections.", null);
 		this.addDefault(defaults, Messages.ClaimExplosivesAdvertisement, "To allow explosives to destroy blocks in this land claim, use /ClaimExplosions.", null);
-		this.addDefault(defaults, Messages.PlayerInPvPSafeZone, "That player is in a PvP safe zone.", null);		
+		//this.addDefault(defaults, Messages.PlayerInPvPSafeZone, "That player is in a PvP safe zone.", null);		
 		this.addDefault(defaults, Messages.NoPistonsOutsideClaims, "Warning: Pistons won't move blocks outside land claims.", null);
 		this.addDefault(defaults, Messages.SoftMuted, "Soft-muted {0}.", "0: The changed player's name.");
 		this.addDefault(defaults, Messages.UnSoftMuted, "Un-soft-muted {0}.", "0: The changed player's name.");
@@ -1575,8 +1583,8 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.ResizeFailOverlapRegion, "You don't have permission to build there, so you can't claim that area.", null);
 		this.addDefault(defaults, Messages.NoBuildPortalPermission, "You can't use this portal because you don't have {0}'s permission to build an exit portal in the destination land claim.", "0: Destination land claim owner's name.");
 		this.addDefault(defaults, Messages.ShowNearbyClaims, "Found {0} land claims.", "0: Number of claims found.");
-		this.addDefault(defaults, Messages.NoChatUntilMove, "Sorry, but you have to move a little more before you can chat.  We get lots of spam bots here.  :)", null);
-		this.addDefault(defaults, Messages.SiegeImmune, "That player is immune to /siege.", null);
+		//this.addDefault(defaults, Messages.NoChatUntilMove, "Sorry, but you have to move a little more before you can chat.  We get lots of spam bots here.  :)", null);
+		//this.addDefault(defaults, Messages.SiegeImmune, "That player is immune to /siege.", null);
 		this.addDefault(defaults, Messages.SetClaimBlocksSuccess, "Updated accrued claim blocks.", null);
 		this.addDefault(defaults, Messages.IgnoreConfirmation, "You're now ignoring chat messages from that player.", null);
 		this.addDefault(defaults, Messages.UnIgnoreConfirmation, "You're no longer ignoring chat messages from that player.", null);
@@ -1593,7 +1601,7 @@ public abstract class DataStore
 		this.addDefault(defaults, Messages.ClaimsListHeader, "Claims:", null);
 		this.addDefault(defaults, Messages.ContinueBlockMath, " (-{0} blocks)", null);
 		this.addDefault(defaults, Messages.EndBlockMath, " = {0} blocks left to spend", null);
-		this.addDefault(defaults, Messages.NoClaimDuringPvP, "You can't claim lands during PvP combat.", null);
+		//this.addDefault(defaults, Messages.NoClaimDuringPvP, "You can't claim lands during PvP combat.", null);
 		this.addDefault(defaults, Messages.UntrustAllOwnerOnly, "Only the claim owner can clear all its permissions.", null);
 		this.addDefault(defaults, Messages.ManagersDontUntrustManagers, "Only the claim owner can demote a manager.", null);
 		this.addDefault(defaults, Messages.PlayerNotIgnorable, "You can't ignore that player.", null);

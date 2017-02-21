@@ -70,7 +70,7 @@ public class Claim
 	public ArrayList<Claim> children = new ArrayList<Claim>();
 	
 	//information about a siege involving this claim.  null means no siege is impacting this claim
-	public SiegeData siegeData = null;
+	//mde public SiegeData siegeData = null;
 	
 	//following a siege, buttons/levers are unlocked temporarily.  this represents that state
 	public boolean doorsOpen = false;
@@ -290,11 +290,12 @@ public class Claim
 		//no resizing, deleting, and so forth while under siege
 		if(player.getUniqueId().equals(this.ownerID))
 		{
+			/*mde
 			if(this.siegeData != null)
 			{
 				return GriefPrevention.instance.dataStore.getMessage(Messages.NoModifyDuringSiege);
 			}
-			
+			*/
 			//otherwise, owners can do whatever
 			return null;
 		}
@@ -328,7 +329,7 @@ public class Claim
 		if(player == null) return "";
 		
 		//when a player tries to build in a claim, if he's under siege, the siege may extend to include the new claim
-		GriefPrevention.instance.dataStore.tryExtendSiege(player, this);
+		//mde GriefPrevention.instance.dataStore.tryExtendSiege(player, this);
 		
 		//admin claims can always be modified by admins, no exceptions
 		if(this.isAdminClaim())
@@ -337,10 +338,12 @@ public class Claim
 		}
 		
 		//no building while under siege
+		/*mde
 		if(this.siegeData != null)
 		{
 			return GriefPrevention.instance.dataStore.getMessage(Messages.NoBuildUnderSiege, this.siegeData.attacker.getName());
 		}
+		*/
 		
 		//no building while in pvp combat
 		PlayerData playerData = GriefPrevention.instance.dataStore.getPlayerData(player.getUniqueId());
@@ -411,7 +414,8 @@ public class Claim
 	public String allowBreak(Player player, Material material)
 	{
 		//if under siege, some blocks will be breakable
-		if(this.siegeData != null || this.doorsOpen)
+		/*mde
+		if(this.siegeData != null || this.doorsOpen)	
 		{
 			boolean breakable = false;
 			
@@ -440,7 +444,7 @@ public class Claim
 				return null;
 			}
 		}
-		
+		mde*/
 		//if not under siege, build rules apply
 		return this.allowBuild(player, material);
 	}
@@ -487,13 +491,15 @@ public class Claim
 		if(player == null) return "";
 		
 		//trying to access inventory in a claim may extend an existing siege to include this claim
-		GriefPrevention.instance.dataStore.tryExtendSiege(player, this);
+		//mde GriefPrevention.instance.dataStore.tryExtendSiege(player, this);
 		
 		//if under siege, nobody accesses containers
+		/*mde
 		if(this.siegeData != null)
 		{
 			return GriefPrevention.instance.dataStore.getMessage(Messages.NoContainersSiege, siegeData.attacker.getName());
 		}
+		*/
 		
 		//owner and administrators in ignoreclaims mode have access
 		if(player.getUniqueId().equals(this.ownerID) || GriefPrevention.instance.dataStore.getPlayerData(player.getUniqueId()).ignoreClaims) return null;

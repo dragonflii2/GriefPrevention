@@ -111,18 +111,18 @@ public class GriefPrevention extends JavaPlugin
 	public int config_claims_accruedIdleThreshold;					//how far (in blocks) a player must move in order to not be considered afk/idle when determining accrued claim blocks
 	public int config_claims_accruedIdlePercent;					//how much percentage of claim block accruals should idle players get
 	public int config_claims_maxDepth;								//limit on how deep claims can go
-	public int config_claims_expirationDays;						//how many days of inactivity before a player loses his claims
-	public int config_claims_expirationExemptionTotalBlocks;        //total claim blocks amount which will exempt a player from claim expiration
-	public int config_claims_expirationExemptionBonusBlocks;        //bonus claim blocks amount which will exempt a player from claim expiration
+	//public int config_claims_expirationDays;						//how many days of inactivity before a player loses his claims
+	//public int config_claims_expirationExemptionTotalBlocks;        //total claim blocks amount which will exempt a player from claim expiration
+	//public int config_claims_expirationExemptionBonusBlocks;        //bonus claim blocks amount which will exempt a player from claim expiration
 	
 	public int config_claims_automaticClaimsForNewPlayersRadius;	//how big automatic new player claims (when they place a chest) should be.  0 to disable
 	public int config_claims_claimsExtendIntoGroundDistance;		//how far below the shoveled block a new claim will reach
 	public int config_claims_minWidth;								//minimum width for non-admin claims
 	public int config_claims_minArea;                               //minimum area for non-admin claims
 	
-	public int config_claims_chestClaimExpirationDays;				//number of days of inactivity before an automatic chest claim will be deleted
-	public int config_claims_unusedClaimExpirationDays;				//number of days of inactivity before an unused (nothing build) claim will be deleted
-	public boolean config_claims_survivalAutoNatureRestoration;		//whether survival claims will be automatically restored to nature when auto-deleted
+	//public int config_claims_chestClaimExpirationDays;				//number of days of inactivity before an automatic chest claim will be deleted
+	//public int config_claims_unusedClaimExpirationDays;				//number of days of inactivity before an unused (nothing build) claim will be deleted
+	//public boolean config_claims_survivalAutoNatureRestoration;		//whether survival claims will be automatically restored to nature when auto-deleted
 	public boolean config_claims_allowTrappedInAdminClaims;			//whether it should be allowed to use /trapped in adminclaims.
 	
 	public Material config_claims_investigationTool;				//which material will be used to investigate claims with a right click
@@ -132,35 +132,35 @@ public class GriefPrevention extends JavaPlugin
 	public boolean config_claims_supplyPlayerManual;                //whether to give new players a book with land claim help in it
 	public int config_claims_manualDeliveryDelaySeconds;            //how long to wait before giving a book to a new player
 	
-	public ArrayList<World> config_siege_enabledWorlds;				//whether or not /siege is enabled on this server
-	public ArrayList<Material> config_siege_blocks;					//which blocks will be breakable in siege mode
+	//public ArrayList<World> config_siege_enabledWorlds;				//whether or not /siege is enabled on this server
+	//public ArrayList<Material> config_siege_blocks;					//which blocks will be breakable in siege mode
 		
-	public boolean config_spam_enabled;								//whether or not to monitor for spam
-	public int config_spam_loginCooldownSeconds;					//how long players must wait between logins.  combats login spam.
-	public int config_spam_loginLogoutNotificationsPerMinute;		//how many login/logout notifications to show per minute (global, not per player)
-	public ArrayList<String> config_spam_monitorSlashCommands;  	//the list of slash commands monitored for spam
-	public boolean config_spam_banOffenders;						//whether or not to ban spammers automatically
-	public String config_spam_banMessage;							//message to show an automatically banned player
-	public String config_spam_warningMessage;						//message to show a player who is close to spam level
-	public String config_spam_allowedIpAddresses;					//IP addresses which will not be censored
-	public int config_spam_deathMessageCooldownSeconds;				//cooldown period for death messages (per player) in seconds
-	public int config_spam_logoutMessageDelaySeconds;               //delay before a logout message will be shown (only if the player stays offline that long)
+	//public boolean config_spam_enabled;								//whether or not to monitor for spam
+	//public int config_spam_loginCooldownSeconds;					//how long players must wait between logins.  combats login spam.
+	//public int config_spam_loginLogoutNotificationsPerMinute;		//how many login/logout notifications to show per minute (global, not per player)
+	//public ArrayList<String> config_spam_monitorSlashCommands;  	//the list of slash commands monitored for spam
+	//public boolean config_spam_banOffenders;						//whether or not to ban spammers automatically
+	//public String config_spam_banMessage;							//message to show an automatically banned player
+	//public String config_spam_warningMessage;						//message to show a player who is close to spam level
+	//public String config_spam_allowedIpAddresses;					//IP addresses which will not be censored
+	//public int config_spam_deathMessageCooldownSeconds;				//cooldown period for death messages (per player) in seconds
+	//public int config_spam_logoutMessageDelaySeconds;               //delay before a logout message will be shown (only if the player stays offline that long)
 	
-	HashMap<World, Boolean> config_pvp_specifiedWorlds;				//list of worlds where pvp anti-grief rules apply, according to the config file
-	public boolean config_pvp_protectFreshSpawns;					//whether to make newly spawned players immune until they pick up an item
-	public boolean config_pvp_punishLogout;						    //whether to kill players who log out during PvP combat
-	public int config_pvp_combatTimeoutSeconds;						//how long combat is considered to continue after the most recent damage
-	public boolean config_pvp_allowCombatItemDrop;					//whether a player can drop items during combat to hide them
-	public ArrayList<String> config_pvp_blockedCommands;			//list of commands which may not be used during pvp combat
-	public boolean config_pvp_noCombatInPlayerLandClaims;			//whether players may fight in player-owned land claims
-	public boolean config_pvp_noCombatInAdminLandClaims;			//whether players may fight in admin-owned land claims
-	public boolean config_pvp_noCombatInAdminSubdivisions;          //whether players may fight in subdivisions of admin-owned land claims
-	public boolean config_pvp_allowLavaNearPlayers;                 //whether players may dump lava near other players in pvp worlds
-	public boolean config_pvp_allowFireNearPlayers;                 //whether players may start flint/steel fires near other players in pvp worlds
-    public boolean config_pvp_protectPets;                          //whether players may damage pets outside of land claims in pvp worlds
+	//HashMap<World, Boolean> config_pvp_specifiedWorlds;				//list of worlds where pvp anti-grief rules apply, according to the config file
+	//public boolean config_pvp_protectFreshSpawns;					//whether to make newly spawned players immune until they pick up an item
+	//public boolean config_pvp_punishLogout;						    //whether to kill players who log out during PvP combat
+	//public int config_pvp_combatTimeoutSeconds;						//how long combat is considered to continue after the most recent damage
+	//public boolean config_pvp_allowCombatItemDrop;					//whether a player can drop items during combat to hide them
+	//public ArrayList<String> config_pvp_blockedCommands;			//list of commands which may not be used during pvp combat
+	//public boolean config_pvp_noCombatInPlayerLandClaims;			//whether players may fight in player-owned land claims
+	//public boolean config_pvp_noCombatInAdminLandClaims;			//whether players may fight in admin-owned land claims
+	//public boolean config_pvp_noCombatInAdminSubdivisions;          //whether players may fight in subdivisions of admin-owned land claims
+	//public boolean config_pvp_allowLavaNearPlayers;                 //whether players may dump lava near other players in pvp worlds
+	//public boolean config_pvp_allowFireNearPlayers;                 //whether players may start flint/steel fires near other players in pvp worlds
+    //public boolean config_pvp_protectPets;                          //whether players may damage pets outside of land claims in pvp worlds
 	
-	public boolean config_lockDeathDropsInPvpWorlds;                //whether players' dropped on death items are protected in pvp worlds
-	public boolean config_lockDeathDropsInNonPvpWorlds;             //whether players' dropped on death items are protected in non-pvp worlds
+	//public boolean config_lockDeathDropsInPvpWorlds;                //whether players' dropped on death items are protected in pvp worlds
+	//public boolean config_lockDeathDropsInNonPvpWorlds;             //whether players' dropped on death items are protected in non-pvp worlds
 	
 	public double config_economy_claimBlocksPurchaseCost;			//cost to purchase a claim block.  set to zero to disable purchase.
 	public double config_economy_claimBlocksSellValue;				//return on a sold claim block.  set to zero to disable sale.
@@ -173,11 +173,11 @@ public class GriefPrevention extends JavaPlugin
 	public boolean config_fireSpreads;								//whether fire spreads outside of claims
 	public boolean config_fireDestroys;								//whether fire destroys blocks outside of claims
 	
-	public boolean config_whisperNotifications; 					//whether whispered messages will broadcast to administrators in game
+	//public boolean config_whisperNotifications; 					//whether whispered messages will broadcast to administrators in game
 	public boolean config_signNotifications;                        //whether sign content will broadcast to administrators in game
-	public ArrayList<String> config_eavesdrop_whisperCommands;		//list of whisper commands to eavesdrop on
+	//public ArrayList<String> config_eavesdrop_whisperCommands;		//list of whisper commands to eavesdrop on
 	
-	public boolean config_smartBan;									//whether to ban accounts which very likely owned by a banned player
+	//public boolean config_smartBan;									//whether to ban accounts which very likely owned by a banned player
 	
 	public boolean config_endermenMoveBlocks;						//whether or not endermen may move blocks around
 	public boolean config_silverfishBreakBlocks;					//whether silverfish may break blocks
@@ -185,9 +185,9 @@ public class GriefPrevention extends JavaPlugin
 	public boolean config_rabbitsEatCrops;                          //whether or not rabbits may eat crops
 	public boolean config_zombiesBreakDoors;						//whether or not hard-mode zombies may break down wooden doors
 	
-	public int config_ipLimit;                                      //how many players can share an IP address
+	//public int config_ipLimit;                                      //how many players can share an IP address
 	
-	public boolean config_trollFilterEnabled;                       //whether to auto-mute new players who use banned words right after joining
+	//public boolean config_trollFilterEnabled;                       //whether to auto-mute new players who use banned words right after joining
 	
 	public MaterialCollection config_mods_accessTrustIds;			//list of block IDs which should require /accesstrust for player interaction
 	public MaterialCollection config_mods_containerTrustIds;		//list of block IDs which should require /containertrust for player interaction
@@ -205,11 +205,11 @@ public class GriefPrevention extends JavaPlugin
     public boolean config_logs_suspiciousEnabled;
     public boolean config_logs_adminEnabled;
     public boolean config_logs_debugEnabled;
-    public boolean config_logs_mutedChatEnabled;
+    //public boolean config_logs_mutedChatEnabled;
     
     //ban management plugin interop settings
-    public boolean config_ban_useCommand;
-    public String config_ban_commandFormat;
+    //public boolean config_ban_useCommand;
+    //public String config_ban_commandFormat;
 	
 	private String databaseUrl;
 	private String databaseUserName;
@@ -324,12 +324,12 @@ public class GriefPrevention extends JavaPlugin
 		}
 		
 		//start the recurring cleanup event for entities in creative worlds
-		EntityCleanupTask task = new EntityCleanupTask(0);
-		this.getServer().getScheduler().scheduleSyncDelayedTask(GriefPrevention.instance, task, 20L * 60 * 2);
+		//mde EntityCleanupTask task = new EntityCleanupTask(0);
+		//mde this.getServer().getScheduler().scheduleSyncDelayedTask(GriefPrevention.instance, task, 20L * 60 * 2);
 		
 		//start recurring cleanup scan for unused claims belonging to inactive players
-		FindUnusedClaimsTask task2 = new FindUnusedClaimsTask();
-		this.getServer().getScheduler().scheduleSyncRepeatingTask(this, task2, 20L * 60, 20L * 60);
+		//mde FindUnusedClaimsTask task2 = new FindUnusedClaimsTask();
+		//mde this.getServer().getScheduler().scheduleSyncRepeatingTask(this, task2, 20L * 60, 20L * 60);
 		
 		//register for events
 		PluginManager pluginManager = this.getServer().getPluginManager();
@@ -513,12 +513,12 @@ public class GriefPrevention extends JavaPlugin
         }
         
         //pvp worlds list
-        this.config_pvp_specifiedWorlds = new HashMap<World, Boolean>();
-        for(World world : worlds)          
-        {
-            boolean pvpWorld = config.getBoolean("GriefPrevention.PvP.RulesEnabledInWorld." + world.getName(), world.getPVP());
-            this.config_pvp_specifiedWorlds.put(world, pvpWorld);
-        }
+        //this.config_pvp_specifiedWorlds = new HashMap<World, Boolean>();
+        //for(World world : worlds)          
+        //{
+            //boolean pvpWorld = config.getBoolean("GriefPrevention.PvP.RulesEnabledInWorld." + world.getName(), world.getPVP());
+            //this.config_pvp_specifiedWorlds.put(world, pvpWorld);
+        //}
         
         //sea level
         this.config_seaLevelOverride = new HashMap<String, Integer>();
@@ -552,12 +552,12 @@ public class GriefPrevention extends JavaPlugin
         this.config_claims_minWidth = config.getInt("GriefPrevention.Claims.MinimumWidth", 5);
         this.config_claims_minArea = config.getInt("GriefPrevention.Claims.MinimumArea", 100);
         this.config_claims_maxDepth = config.getInt("GriefPrevention.Claims.MaximumDepth", 0);
-        this.config_claims_chestClaimExpirationDays = config.getInt("GriefPrevention.Claims.Expiration.ChestClaimDays", 7);
-        this.config_claims_unusedClaimExpirationDays = config.getInt("GriefPrevention.Claims.Expiration.UnusedClaimDays", 14);
-        this.config_claims_expirationDays = config.getInt("GriefPrevention.Claims.Expiration.AllClaims.DaysInactive", 60);
-        this.config_claims_expirationExemptionTotalBlocks = config.getInt("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasTotalClaimBlocks", 10000);
-        this.config_claims_expirationExemptionBonusBlocks = config.getInt("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasBonusClaimBlocks", 5000);
-        this.config_claims_survivalAutoNatureRestoration = config.getBoolean("GriefPrevention.Claims.Expiration.AutomaticNatureRestoration.SurvivalWorlds", false);
+        //this.config_claims_chestClaimExpirationDays = config.getInt("GriefPrevention.Claims.Expiration.ChestClaimDays", 7);
+        //this.config_claims_unusedClaimExpirationDays = config.getInt("GriefPrevention.Claims.Expiration.UnusedClaimDays", 14);
+        //this.config_claims_expirationDays = config.getInt("GriefPrevention.Claims.Expiration.AllClaims.DaysInactive", 60);
+        //this.config_claims_expirationExemptionTotalBlocks = config.getInt("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasTotalClaimBlocks", 10000);
+        //this.config_claims_expirationExemptionBonusBlocks = config.getInt("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasBonusClaimBlocks", 5000);
+        //this.config_claims_survivalAutoNatureRestoration = config.getBoolean("GriefPrevention.Claims.Expiration.AutomaticNatureRestoration.SurvivalWorlds", false);
         this.config_claims_allowTrappedInAdminClaims = config.getBoolean("GriefPrevention.Claims.AllowTrappedInAdminClaims", false);
         
         this.config_claims_maxClaimsPerPlayer = config.getInt("GriefPrevention.Claims.MaximumNumberOfClaimsPerPlayer", 0);
@@ -568,29 +568,29 @@ public class GriefPrevention extends JavaPlugin
         this.config_claims_supplyPlayerManual = config.getBoolean("GriefPrevention.Claims.DeliverManuals", true);
         this.config_claims_manualDeliveryDelaySeconds = config.getInt("GriefPrevention.Claims.ManualDeliveryDelaySeconds", 30);
         
-        this.config_spam_enabled = config.getBoolean("GriefPrevention.Spam.Enabled", true);
-        this.config_spam_loginCooldownSeconds = config.getInt("GriefPrevention.Spam.LoginCooldownSeconds", 60);
-        this.config_spam_loginLogoutNotificationsPerMinute = config.getInt("GriefPrevention.Spam.LoginLogoutNotificationsPerMinute", 5);
-        this.config_spam_warningMessage = config.getString("GriefPrevention.Spam.WarningMessage", "Please reduce your noise level.  Spammers will be banned.");
-        this.config_spam_allowedIpAddresses = config.getString("GriefPrevention.Spam.AllowedIpAddresses", "1.2.3.4; 5.6.7.8");
-        this.config_spam_banOffenders = config.getBoolean("GriefPrevention.Spam.BanOffenders", true);       
-        this.config_spam_banMessage = config.getString("GriefPrevention.Spam.BanMessage", "Banned for spam.");
-        String slashCommandsToMonitor = config.getString("GriefPrevention.Spam.MonitorSlashCommands", "/me;/global;/local");
-        slashCommandsToMonitor = config.getString("GriefPrevention.Spam.ChatSlashCommands", slashCommandsToMonitor);
-        this.config_spam_deathMessageCooldownSeconds = config.getInt("GriefPrevention.Spam.DeathMessageCooldownSeconds", 120);
-        this.config_spam_logoutMessageDelaySeconds = config.getInt("GriefPrevention.Spam.Logout Message Delay In Seconds", 0);
+        //this.config_spam_enabled = config.getBoolean("GriefPrevention.Spam.Enabled", true);
+        //this.config_spam_loginCooldownSeconds = config.getInt("GriefPrevention.Spam.LoginCooldownSeconds", 60);
+        //this.config_spam_loginLogoutNotificationsPerMinute = config.getInt("GriefPrevention.Spam.LoginLogoutNotificationsPerMinute", 5);
+        //this.config_spam_warningMessage = config.getString("GriefPrevention.Spam.WarningMessage", "Please reduce your noise level.  Spammers will be banned.");
+        //this.config_spam_allowedIpAddresses = config.getString("GriefPrevention.Spam.AllowedIpAddresses", "1.2.3.4; 5.6.7.8");
+        //this.config_spam_banOffenders = config.getBoolean("GriefPrevention.Spam.BanOffenders", true);       
+        //this.config_spam_banMessage = config.getString("GriefPrevention.Spam.BanMessage", "Banned for spam.");
+        //String slashCommandsToMonitor = config.getString("GriefPrevention.Spam.MonitorSlashCommands", "/me;/global;/local");
+        //slashCommandsToMonitor = config.getString("GriefPrevention.Spam.ChatSlashCommands", slashCommandsToMonitor);
+        //this.config_spam_deathMessageCooldownSeconds = config.getInt("GriefPrevention.Spam.DeathMessageCooldownSeconds", 120);
+        //this.config_spam_logoutMessageDelaySeconds = config.getInt("GriefPrevention.Spam.Logout Message Delay In Seconds", 0);
         
-        this.config_pvp_protectFreshSpawns = config.getBoolean("GriefPrevention.PvP.ProtectFreshSpawns", true);
-        this.config_pvp_punishLogout = config.getBoolean("GriefPrevention.PvP.PunishLogout", true);
-        this.config_pvp_combatTimeoutSeconds = config.getInt("GriefPrevention.PvP.CombatTimeoutSeconds", 15);
-        this.config_pvp_allowCombatItemDrop = config.getBoolean("GriefPrevention.PvP.AllowCombatItemDrop", false);
-        String bannedPvPCommandsList = config.getString("GriefPrevention.PvP.BlockedSlashCommands", "/home;/vanish;/spawn;/tpa");
+        //this.config_pvp_protectFreshSpawns = config.getBoolean("GriefPrevention.PvP.ProtectFreshSpawns", true);
+        //this.config_pvp_punishLogout = config.getBoolean("GriefPrevention.PvP.PunishLogout", true);
+        //this.config_pvp_combatTimeoutSeconds = config.getInt("GriefPrevention.PvP.CombatTimeoutSeconds", 15);
+        //this.config_pvp_allowCombatItemDrop = config.getBoolean("GriefPrevention.PvP.AllowCombatItemDrop", false);
+        //String bannedPvPCommandsList = config.getString("GriefPrevention.PvP.BlockedSlashCommands", "/home;/vanish;/spawn;/tpa");
         
         this.config_economy_claimBlocksPurchaseCost = config.getDouble("GriefPrevention.Economy.ClaimBlocksPurchaseCost", 0);
         this.config_economy_claimBlocksSellValue = config.getDouble("GriefPrevention.Economy.ClaimBlocksSellValue", 0);
         
-        this.config_lockDeathDropsInPvpWorlds = config.getBoolean("GriefPrevention.ProtectItemsDroppedOnDeath.PvPWorlds", false);
-        this.config_lockDeathDropsInNonPvpWorlds = config.getBoolean("GriefPrevention.ProtectItemsDroppedOnDeath.NonPvPWorlds", true);
+        //this.config_lockDeathDropsInPvpWorlds = config.getBoolean("GriefPrevention.ProtectItemsDroppedOnDeath.PvPWorlds", false);
+        //this.config_lockDeathDropsInNonPvpWorlds = config.getBoolean("GriefPrevention.ProtectItemsDroppedOnDeath.NonPvPWorlds", true);
         
         this.config_blockClaimExplosions = config.getBoolean("GriefPrevention.BlockLandClaimExplosions", true);
         this.config_blockSurfaceCreeperExplosions = config.getBoolean("GriefPrevention.BlockSurfaceCreeperExplosions", true);
@@ -602,22 +602,22 @@ public class GriefPrevention extends JavaPlugin
         this.config_fireSpreads = config.getBoolean("GriefPrevention.FireSpreads", false);
         this.config_fireDestroys = config.getBoolean("GriefPrevention.FireDestroys", false);
         
-        this.config_whisperNotifications = config.getBoolean("GriefPrevention.AdminsGetWhispers", true);
+        //this.config_whisperNotifications = config.getBoolean("GriefPrevention.AdminsGetWhispers", true);
         this.config_signNotifications = config.getBoolean("GriefPrevention.AdminsGetSignNotifications", true);
-        String whisperCommandsToMonitor = config.getString("GriefPrevention.WhisperCommands", "/tell;/pm;/r;/whisper;/msg");
-        whisperCommandsToMonitor = config.getString("GriefPrevention.Spam.WhisperSlashCommands", whisperCommandsToMonitor);
+        //String whisperCommandsToMonitor = config.getString("GriefPrevention.WhisperCommands", "/tell;/pm;/r;/whisper;/msg");
+        //whisperCommandsToMonitor = config.getString("GriefPrevention.Spam.WhisperSlashCommands", whisperCommandsToMonitor);
         
-        this.config_smartBan = config.getBoolean("GriefPrevention.SmartBan", true);
-        this.config_trollFilterEnabled = config.getBoolean("GriefPrevention.Mute New Players Using Banned Words", true);
-        this.config_ipLimit = config.getInt("GriefPrevention.MaxPlayersPerIpAddress", 3); 
+        //this.config_smartBan = config.getBoolean("GriefPrevention.SmartBan", true);
+        //this.config_trollFilterEnabled = config.getBoolean("GriefPrevention.Mute New Players Using Banned Words", true);
+        //this.config_ipLimit = config.getInt("GriefPrevention.MaxPlayersPerIpAddress", 3); 
         
         this.config_endermenMoveBlocks = config.getBoolean("GriefPrevention.EndermenMoveBlocks", false);
         this.config_silverfishBreakBlocks = config.getBoolean("GriefPrevention.SilverfishBreakBlocks", false);
         this.config_creaturesTrampleCrops = config.getBoolean("GriefPrevention.CreaturesTrampleCrops", false);
         this.config_rabbitsEatCrops = config.getBoolean("GriefPrevention.RabbitsEatCrops", true);
         this.config_zombiesBreakDoors = config.getBoolean("GriefPrevention.HardModeZombiesBreakDoors", false);
-        this.config_ban_useCommand = config.getBoolean("GriefPrevention.UseBanCommand", false);
-        this.config_ban_commandFormat = config.getString("GriefPrevention.BanCommandPattern", "ban %name% %reason%");
+        //this.config_ban_useCommand = config.getBoolean("GriefPrevention.UseBanCommand", false);
+        //this.config_ban_commandFormat = config.getString("GriefPrevention.BanCommandPattern", "ban %name% %reason%");
         
         this.config_mods_ignoreClaimsAccounts = config.getStringList("GriefPrevention.Mods.PlayersIgnoringAllClaims");
         
@@ -675,83 +675,83 @@ public class GriefPrevention extends JavaPlugin
         }
         
         //default for siege worlds list
-        ArrayList<String> defaultSiegeWorldNames = new ArrayList<String>();
+        //ArrayList<String> defaultSiegeWorldNames = new ArrayList<String>();
         
         //get siege world names from the config file
-        List<String> siegeEnabledWorldNames = config.getStringList("GriefPrevention.Siege.Worlds");
-        if(siegeEnabledWorldNames == null)
-        {           
-            siegeEnabledWorldNames = defaultSiegeWorldNames;
-        }
+        //List<String> siegeEnabledWorldNames = config.getStringList("GriefPrevention.Siege.Worlds");
+        //if(siegeEnabledWorldNames == null)
+        //{           
+            //siegeEnabledWorldNames = defaultSiegeWorldNames;
+        //}
         
         //validate that list
-        this.config_siege_enabledWorlds = new ArrayList<World>();
-        for(int i = 0; i < siegeEnabledWorldNames.size(); i++)
-        {
-            String worldName = siegeEnabledWorldNames.get(i);
-            World world = this.getServer().getWorld(worldName);
-            if(world == null)
-            {
-                AddLogEntry("Error: Siege Configuration: There's no world named \"" + worldName + "\".  Please update your config.yml.");
-            }
-            else
-            {
-                this.config_siege_enabledWorlds.add(world);
-            }
-        }
+        //this.config_siege_enabledWorlds = new ArrayList<World>();
+        //for(int i = 0; i < siegeEnabledWorldNames.size(); i++)
+        //{
+            //String worldName = siegeEnabledWorldNames.get(i);
+            //World world = this.getServer().getWorld(worldName);
+            //if(world == null)
+            //{
+                //AddLogEntry("Error: Siege Configuration: There's no world named \"" + worldName + "\".  Please update your config.yml.");
+            //}
+            //else
+            //{
+                //this.config_siege_enabledWorlds.add(world);
+            //}
+        //}
         
         //default siege blocks
-        this.config_siege_blocks = new ArrayList<Material>();
-        this.config_siege_blocks.add(Material.DIRT);
-        this.config_siege_blocks.add(Material.GRASS);
-        this.config_siege_blocks.add(Material.LONG_GRASS);
-        this.config_siege_blocks.add(Material.COBBLESTONE);
-        this.config_siege_blocks.add(Material.GRAVEL);
-        this.config_siege_blocks.add(Material.SAND);
-        this.config_siege_blocks.add(Material.GLASS);
-        this.config_siege_blocks.add(Material.THIN_GLASS);
-        this.config_siege_blocks.add(Material.WOOD);
-        this.config_siege_blocks.add(Material.WOOL);
-        this.config_siege_blocks.add(Material.SNOW);
+        //this.config_siege_blocks = new ArrayList<Material>();
+        //this.config_siege_blocks.add(Material.DIRT);
+        //this.config_siege_blocks.add(Material.GRASS);
+        //this.config_siege_blocks.add(Material.LONG_GRASS);
+        //this.config_siege_blocks.add(Material.COBBLESTONE);
+        //this.config_siege_blocks.add(Material.GRAVEL);
+        //this.config_siege_blocks.add(Material.SAND);
+        //this.config_siege_blocks.add(Material.GLASS);
+        //this.config_siege_blocks.add(Material.THIN_GLASS);
+        //this.config_siege_blocks.add(Material.WOOD);
+        //this.config_siege_blocks.add(Material.WOOL);
+        //this.config_siege_blocks.add(Material.SNOW);
         
         //build a default config entry
-        ArrayList<String> defaultBreakableBlocksList = new ArrayList<String>();
-        for(int i = 0; i < this.config_siege_blocks.size(); i++)
-        {
-            defaultBreakableBlocksList.add(this.config_siege_blocks.get(i).name());
-        }
+        //ArrayList<String> defaultBreakableBlocksList = new ArrayList<String>();
+        //for(int i = 0; i < this.config_siege_blocks.size(); i++)
+        //{
+            //defaultBreakableBlocksList.add(this.config_siege_blocks.get(i).name());
+        //}
         
         //try to load the list from the config file
-        List<String> breakableBlocksList = config.getStringList("GriefPrevention.Siege.BreakableBlocks");
+        //List<String> breakableBlocksList = config.getStringList("GriefPrevention.Siege.BreakableBlocks");
         
         //if it fails, use default list instead
-        if(breakableBlocksList == null || breakableBlocksList.size() == 0)
-        {
-            breakableBlocksList = defaultBreakableBlocksList;
-        }
+//        if(breakableBlocksList == null || breakableBlocksList.size() == 0)
+        //{
+            //breakableBlocksList = defaultBreakableBlocksList;
+        //}
         
         //parse the list of siege-breakable blocks
-        this.config_siege_blocks = new ArrayList<Material>();
-        for(int i = 0; i < breakableBlocksList.size(); i++)
-        {
-            String blockName = breakableBlocksList.get(i);
-            Material material = Material.getMaterial(blockName);
-            if(material == null)
-            {
-                GriefPrevention.AddLogEntry("Siege Configuration: Material not found: " + blockName + ".");
-            }
-            else
-            {
-                this.config_siege_blocks.add(material);
-            }
-        }
+        //this.config_siege_blocks = new ArrayList<Material>();
+        //for(int i = 0; i < breakableBlocksList.size(); i++)
+        //{
+            //String blockName = breakableBlocksList.get(i);
+            //Material material = Material.getMaterial(blockName);
+            //if(material == null)
+            //{
+                //GriefPrevention.AddLogEntry("Siege Configuration: Material not found: " + blockName + ".");
+            //}
+            //else
+            //{
+                //this.config_siege_blocks.add(material);
+            //}
+        //}
         
-        this.config_pvp_noCombatInPlayerLandClaims = config.getBoolean("GriefPrevention.PvP.ProtectPlayersInLandClaims.PlayerOwnedClaims", this.config_siege_enabledWorlds.size() == 0);
-        this.config_pvp_noCombatInAdminLandClaims = config.getBoolean("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeClaims", this.config_siege_enabledWorlds.size() == 0);
-        this.config_pvp_noCombatInAdminSubdivisions = config.getBoolean("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeSubdivisions", this.config_siege_enabledWorlds.size() == 0);
-        this.config_pvp_allowLavaNearPlayers = config.getBoolean("GriefPrevention.PvP.AllowLavaDumpingNearOtherPlayers", true);
-        this.config_pvp_allowFireNearPlayers = config.getBoolean("GriefPrevention.PvP.AllowFlintAndSteelNearOtherPlayers", true);
-        this.config_pvp_protectPets = config.getBoolean("GriefPrevention.PvP.ProtectPetsOutsideLandClaims", false);
+        //this.config_pvp_noCombatInPlayerLandClaims = config.getBoolean("GriefPrevention.PvP.ProtectPlayersInLandClaims.PlayerOwnedClaims", this.config_siege_enabledWorlds.size() == 0);
+        //this.config_pvp_noCombatInAdminLandClaims = config.getBoolean("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeClaims", this.config_siege_enabledWorlds.size() == 0);
+        //this.config_pvp_noCombatInAdminSubdivisions = config.getBoolean("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeSubdivisions", this.config_siege_enabledWorlds.size() == 0);
+        //this.config_pvp_allowLavaNearPlayers = config.getBoolean("GriefPrevention.PvP.AllowLavaDumpingNearOtherPlayers", true);
+        //this.config_pvp_allowFireNearPlayers = config.getBoolean("GriefPrevention.PvP.AllowFlintAndSteelNearOtherPlayers", true);
+        //this.config_pvp_protectPets = config.getBoolean("GriefPrevention.PvP.ProtectPetsOutsideLandClaims", false);
         
         //optional database settings
         this.databaseUrl = config.getString("GriefPrevention.Database.URL", "");
@@ -764,7 +764,7 @@ public class GriefPrevention extends JavaPlugin
         this.config_logs_suspiciousEnabled = config.getBoolean("GriefPrevention.Abridged Logs.Included Entry Types.Suspicious Activity", true);
         this.config_logs_adminEnabled = config.getBoolean("GriefPrevention.Abridged Logs.Included Entry Types.Administrative Activity", false);
         this.config_logs_debugEnabled = config.getBoolean("GriefPrevention.Abridged Logs.Included Entry Types.Debug", false);
-        this.config_logs_mutedChatEnabled = config.getBoolean("GriefPrevention.Abridged Logs.Included Entry Types.Muted Chat Messages", false);
+        //this.config_logs_mutedChatEnabled = config.getBoolean("GriefPrevention.Abridged Logs.Included Entry Types.Muted Chat Messages", false);
         
         //claims mode by world
 		try
@@ -809,12 +809,12 @@ public class GriefPrevention extends JavaPlugin
         outConfig.set("GriefPrevention.Claims.MaximumDepth", this.config_claims_maxDepth);
         outConfig.set("GriefPrevention.Claims.InvestigationTool", this.config_claims_investigationTool.name());
         outConfig.set("GriefPrevention.Claims.ModificationTool", this.config_claims_modificationTool.name());
-        outConfig.set("GriefPrevention.Claims.Expiration.ChestClaimDays", this.config_claims_chestClaimExpirationDays);
-        outConfig.set("GriefPrevention.Claims.Expiration.UnusedClaimDays", this.config_claims_unusedClaimExpirationDays);       
-        outConfig.set("GriefPrevention.Claims.Expiration.AllClaims.DaysInactive", this.config_claims_expirationDays);
-        outConfig.set("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasTotalClaimBlocks", this.config_claims_expirationExemptionTotalBlocks);
-        outConfig.set("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasBonusClaimBlocks", this.config_claims_expirationExemptionBonusBlocks);
-        outConfig.set("GriefPrevention.Claims.Expiration.AutomaticNatureRestoration.SurvivalWorlds", this.config_claims_survivalAutoNatureRestoration);
+        //outConfig.set("GriefPrevention.Claims.Expiration.ChestClaimDays", this.config_claims_chestClaimExpirationDays);
+        //outConfig.set("GriefPrevention.Claims.Expiration.UnusedClaimDays", this.config_claims_unusedClaimExpirationDays);       
+        //outConfig.set("GriefPrevention.Claims.Expiration.AllClaims.DaysInactive", this.config_claims_expirationDays);
+        //outConfig.set("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasTotalClaimBlocks", this.config_claims_expirationExemptionTotalBlocks);
+        //outConfig.set("GriefPrevention.Claims.Expiration.AllClaims.ExceptWhenOwnerHasBonusClaimBlocks", this.config_claims_expirationExemptionBonusBlocks);
+        //outConfig.set("GriefPrevention.Claims.Expiration.AutomaticNatureRestoration.SurvivalWorlds", this.config_claims_survivalAutoNatureRestoration);
         outConfig.set("GriefPrevention.Claims.AllowTrappedInAdminClaims", this.config_claims_allowTrappedInAdminClaims);
         outConfig.set("GriefPrevention.Claims.MaximumNumberOfClaimsPerPlayer", this.config_claims_maxClaimsPerPlayer);
         outConfig.set("GriefPrevention.Claims.CreationRequiresWorldGuardBuildPermission", this.config_claims_respectWorldGuard);
@@ -824,39 +824,39 @@ public class GriefPrevention extends JavaPlugin
         outConfig.set("GriefPrevention.Claims.DeliverManuals", config_claims_supplyPlayerManual);
         outConfig.set("GriefPrevention.Claims.ManualDeliveryDelaySeconds", config_claims_manualDeliveryDelaySeconds);
         
-        outConfig.set("GriefPrevention.Spam.Enabled", this.config_spam_enabled);
-        outConfig.set("GriefPrevention.Spam.LoginCooldownSeconds", this.config_spam_loginCooldownSeconds);
-        outConfig.set("GriefPrevention.Spam.LoginLogoutNotificationsPerMinute", this.config_spam_loginLogoutNotificationsPerMinute);
-        outConfig.set("GriefPrevention.Spam.ChatSlashCommands", slashCommandsToMonitor);
-        outConfig.set("GriefPrevention.Spam.WhisperSlashCommands", whisperCommandsToMonitor);     
-        outConfig.set("GriefPrevention.Spam.WarningMessage", this.config_spam_warningMessage);
-        outConfig.set("GriefPrevention.Spam.BanOffenders", this.config_spam_banOffenders);      
-        outConfig.set("GriefPrevention.Spam.BanMessage", this.config_spam_banMessage);
-        outConfig.set("GriefPrevention.Spam.AllowedIpAddresses", this.config_spam_allowedIpAddresses);
-        outConfig.set("GriefPrevention.Spam.DeathMessageCooldownSeconds", this.config_spam_deathMessageCooldownSeconds);
-        outConfig.set("GriefPrevention.Spam.Logout Message Delay In Seconds", this.config_spam_logoutMessageDelaySeconds);
+        //outConfig.set("GriefPrevention.Spam.Enabled", this.config_spam_enabled);
+        //outConfig.set("GriefPrevention.Spam.LoginCooldownSeconds", this.config_spam_loginCooldownSeconds);
+        //outConfig.set("GriefPrevention.Spam.LoginLogoutNotificationsPerMinute", this.config_spam_loginLogoutNotificationsPerMinute);
+        //outConfig.set("GriefPrevention.Spam.ChatSlashCommands", slashCommandsToMonitor);
+        //outConfig.set("GriefPrevention.Spam.WhisperSlashCommands", whisperCommandsToMonitor);     
+        //outConfig.set("GriefPrevention.Spam.WarningMessage", this.config_spam_warningMessage);
+        //outConfig.set("GriefPrevention.Spam.BanOffenders", this.config_spam_banOffenders);      
+        //outConfig.set("GriefPrevention.Spam.BanMessage", this.config_spam_banMessage);
+        //outConfig.set("GriefPrevention.Spam.AllowedIpAddresses", this.config_spam_allowedIpAddresses);
+        //outConfig.set("GriefPrevention.Spam.DeathMessageCooldownSeconds", this.config_spam_deathMessageCooldownSeconds);
+        //outConfig.set("GriefPrevention.Spam.Logout Message Delay In Seconds", this.config_spam_logoutMessageDelaySeconds);
         
-        for(World world : worlds)
-        {
-            outConfig.set("GriefPrevention.PvP.RulesEnabledInWorld." + world.getName(), this.pvpRulesApply(world));
-        }
-        outConfig.set("GriefPrevention.PvP.ProtectFreshSpawns", this.config_pvp_protectFreshSpawns);
-        outConfig.set("GriefPrevention.PvP.PunishLogout", this.config_pvp_punishLogout);
-        outConfig.set("GriefPrevention.PvP.CombatTimeoutSeconds", this.config_pvp_combatTimeoutSeconds);
-        outConfig.set("GriefPrevention.PvP.AllowCombatItemDrop", this.config_pvp_allowCombatItemDrop);
-        outConfig.set("GriefPrevention.PvP.BlockedSlashCommands", bannedPvPCommandsList);
-        outConfig.set("GriefPrevention.PvP.ProtectPlayersInLandClaims.PlayerOwnedClaims", this.config_pvp_noCombatInPlayerLandClaims);
-        outConfig.set("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeClaims", this.config_pvp_noCombatInAdminLandClaims);
-        outConfig.set("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeSubdivisions", this.config_pvp_noCombatInAdminSubdivisions);
-        outConfig.set("GriefPrevention.PvP.AllowLavaDumpingNearOtherPlayers", this.config_pvp_allowLavaNearPlayers);
-        outConfig.set("GriefPrevention.PvP.AllowFlintAndSteelNearOtherPlayers", this.config_pvp_allowFireNearPlayers);
-        outConfig.set("GriefPrevention.PvP.ProtectPetsOutsideLandClaims", this.config_pvp_protectPets);
+        //for(World world : worlds)
+        //{
+            //outConfig.set("GriefPrevention.PvP.RulesEnabledInWorld." + world.getName(), this.pvpRulesApply(world));
+        //}
+        //outConfig.set("GriefPrevention.PvP.ProtectFreshSpawns", this.config_pvp_protectFreshSpawns);
+        //outConfig.set("GriefPrevention.PvP.PunishLogout", this.config_pvp_punishLogout);
+        //outConfig.set("GriefPrevention.PvP.CombatTimeoutSeconds", this.config_pvp_combatTimeoutSeconds);
+        //outConfig.set("GriefPrevention.PvP.AllowCombatItemDrop", this.config_pvp_allowCombatItemDrop);
+        //outConfig.set("GriefPrevention.PvP.BlockedSlashCommands", bannedPvPCommandsList);
+        //outConfig.set("GriefPrevention.PvP.ProtectPlayersInLandClaims.PlayerOwnedClaims", this.config_pvp_noCombatInPlayerLandClaims);
+        //outConfig.set("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeClaims", this.config_pvp_noCombatInAdminLandClaims);
+        //outConfig.set("GriefPrevention.PvP.ProtectPlayersInLandClaims.AdministrativeSubdivisions", this.config_pvp_noCombatInAdminSubdivisions);
+        //outConfig.set("GriefPrevention.PvP.AllowLavaDumpingNearOtherPlayers", this.config_pvp_allowLavaNearPlayers);
+        //outConfig.set("GriefPrevention.PvP.AllowFlintAndSteelNearOtherPlayers", this.config_pvp_allowFireNearPlayers);
+        //outConfig.set("GriefPrevention.PvP.ProtectPetsOutsideLandClaims", this.config_pvp_protectPets);
         
         outConfig.set("GriefPrevention.Economy.ClaimBlocksPurchaseCost", this.config_economy_claimBlocksPurchaseCost);
         outConfig.set("GriefPrevention.Economy.ClaimBlocksSellValue", this.config_economy_claimBlocksSellValue);
         
-        outConfig.set("GriefPrevention.ProtectItemsDroppedOnDeath.PvPWorlds", this.config_lockDeathDropsInPvpWorlds);
-        outConfig.set("GriefPrevention.ProtectItemsDroppedOnDeath.NonPvPWorlds", this.config_lockDeathDropsInNonPvpWorlds);
+        //outConfig.set("GriefPrevention.ProtectItemsDroppedOnDeath.PvPWorlds", this.config_lockDeathDropsInPvpWorlds);
+        //outConfig.set("GriefPrevention.ProtectItemsDroppedOnDeath.NonPvPWorlds", this.config_lockDeathDropsInNonPvpWorlds);
         
         outConfig.set("GriefPrevention.BlockLandClaimExplosions", this.config_blockClaimExplosions);
         outConfig.set("GriefPrevention.BlockSurfaceCreeperExplosions", this.config_blockSurfaceCreeperExplosions);
@@ -868,15 +868,15 @@ public class GriefPrevention extends JavaPlugin
         outConfig.set("GriefPrevention.FireSpreads", this.config_fireSpreads);
         outConfig.set("GriefPrevention.FireDestroys", this.config_fireDestroys);
         
-        outConfig.set("GriefPrevention.AdminsGetWhispers", this.config_whisperNotifications);
+        //outConfig.set("GriefPrevention.AdminsGetWhispers", this.config_whisperNotifications);
         outConfig.set("GriefPrevention.AdminsGetSignNotifications", this.config_signNotifications);
         
-        outConfig.set("GriefPrevention.SmartBan", this.config_smartBan);
-        outConfig.set("GriefPrevention.Mute New Players Using Banned Words", this.config_trollFilterEnabled);
-        outConfig.set("GriefPrevention.MaxPlayersPerIpAddress", this.config_ipLimit);
+        //outConfig.set("GriefPrevention.SmartBan", this.config_smartBan);
+        //outConfig.set("GriefPrevention.Mute New Players Using Banned Words", this.config_trollFilterEnabled);
+        //outConfig.set("GriefPrevention.MaxPlayersPerIpAddress", this.config_ipLimit);
         
-        outConfig.set("GriefPrevention.Siege.Worlds", siegeEnabledWorldNames);
-        outConfig.set("GriefPrevention.Siege.BreakableBlocks", breakableBlocksList);
+        //outConfig.set("GriefPrevention.Siege.Worlds", siegeEnabledWorldNames);
+        //outConfig.set("GriefPrevention.Siege.BreakableBlocks", breakableBlocksList);
         
         outConfig.set("GriefPrevention.EndermenMoveBlocks", this.config_endermenMoveBlocks);
         outConfig.set("GriefPrevention.SilverfishBreakBlocks", this.config_silverfishBreakBlocks);      
@@ -888,8 +888,8 @@ public class GriefPrevention extends JavaPlugin
         outConfig.set("GriefPrevention.Database.UserName", this.databaseUserName);
         outConfig.set("GriefPrevention.Database.Password", this.databasePassword);
         
-        outConfig.set("GriefPrevention.UseBanCommand", this.config_ban_useCommand);
-        outConfig.set("GriefPrevention.BanCommandPattern", this.config_ban_commandFormat);
+        //outConfig.set("GriefPrevention.UseBanCommand", this.config_ban_useCommand);
+        //outConfig.set("GriefPrevention.BanCommandPattern", this.config_ban_commandFormat);
         
         outConfig.set("GriefPrevention.Mods.BlockIdsRequiringAccessTrust", this.config_mods_accessTrustIds);
         outConfig.set("GriefPrevention.Mods.BlockIdsRequiringContainerTrust", this.config_mods_containerTrustIds);
@@ -905,7 +905,7 @@ public class GriefPrevention extends JavaPlugin
         outConfig.set("GriefPrevention.Abridged Logs.Included Entry Types.Suspicious Activity", this.config_logs_suspiciousEnabled);
         outConfig.set("GriefPrevention.Abridged Logs.Included Entry Types.Administrative Activity", this.config_logs_adminEnabled);
         outConfig.set("GriefPrevention.Abridged Logs.Included Entry Types.Debug", this.config_logs_debugEnabled);
-        outConfig.set("GriefPrevention.Abridged Logs.Included Entry Types.Muted Chat Messages", this.config_logs_mutedChatEnabled);
+        //outConfig.set("GriefPrevention.Abridged Logs.Included Entry Types.Muted Chat Messages", this.config_logs_mutedChatEnabled);
         
         try
         {
@@ -928,28 +928,28 @@ public class GriefPrevention extends JavaPlugin
         }
         
         //try to parse the list of commands which should be monitored for spam
-        this.config_spam_monitorSlashCommands = new ArrayList<String>();
-        commands = slashCommandsToMonitor.split(";");
-        for(int i = 0; i < commands.length; i++)
-        {
-            this.config_spam_monitorSlashCommands.add(commands[i].trim().toLowerCase());
-        }
+        //this.config_spam_monitorSlashCommands = new ArrayList<String>();
+        //commands = slashCommandsToMonitor.split(";");
+        //for(int i = 0; i < commands.length; i++)
+        //{
+            //this.config_spam_monitorSlashCommands.add(commands[i].trim().toLowerCase());
+        //}
         
         //try to parse the list of commands which should be included in eavesdropping
-        this.config_eavesdrop_whisperCommands  = new ArrayList<String>();
-        commands = whisperCommandsToMonitor.split(";");
-        for(int i = 0; i < commands.length; i++)
-        {
-            this.config_eavesdrop_whisperCommands.add(commands[i].trim().toLowerCase());
-        }       
+        //this.config_eavesdrop_whisperCommands  = new ArrayList<String>();
+        //commands = whisperCommandsToMonitor.split(";");
+        //for(int i = 0; i < commands.length; i++)
+        //{
+            //this.config_eavesdrop_whisperCommands.add(commands[i].trim().toLowerCase());
+        //}       
         
         //try to parse the list of commands which should be banned during pvp combat
-        this.config_pvp_blockedCommands = new ArrayList<String>();
-        commands = bannedPvPCommandsList.split(";");
-        for(int i = 0; i < commands.length; i++)
-        {
-            this.config_pvp_blockedCommands.add(commands[i].trim().toLowerCase());
-        }
+        //this.config_pvp_blockedCommands = new ArrayList<String>();
+        //commands = bannedPvPCommandsList.split(";");
+        //for(int i = 0; i < commands.length; i++)
+        //{
+            //this.config_pvp_blockedCommands.add(commands[i].trim().toLowerCase());
+        //}
     }
 
     private ClaimsMode configStringToClaimsMode(String configSetting)
@@ -1903,10 +1903,10 @@ public class GriefPrevention extends JavaPlugin
 						this.dataStore.deleteClaim(claim, true, true);
 						
 						//if in a creative mode world, /restorenature the claim
-						if(GriefPrevention.instance.creativeRulesApply(claim.getLesserBoundaryCorner()) || GriefPrevention.instance.config_claims_survivalAutoNatureRestoration)
-						{
-							GriefPrevention.instance.restoreClaim(claim, 0);
-						}
+						//if(GriefPrevention.instance.creativeRulesApply(claim.getLesserBoundaryCorner()) || GriefPrevention.instance.config_claims_survivalAutoNatureRestoration)
+						//{
+//							GriefPrevention.instance.restoreClaim(claim, 0);
+						//}
 						
 						GriefPrevention.sendMessage(player, TextMode.Success, Messages.DeleteSuccess);
 						GriefPrevention.AddLogEntry(player.getName() + " deleted " + claim.getOwnerName() + "'s claim at " + GriefPrevention.getfriendlyLocationString(claim.getLesserBoundaryCorner()), CustomLogEntryTypes.AdminActivity);
@@ -2380,6 +2380,7 @@ public class GriefPrevention extends JavaPlugin
 			return true;
 		}
 		
+		/*
 		//siege
 		else if(cmd.getName().equalsIgnoreCase("siege") && player != null)
 		{
@@ -2547,6 +2548,7 @@ public class GriefPrevention extends JavaPlugin
             
             return true;
 		}
+		*/
 		
 		else if(cmd.getName().equalsIgnoreCase("gpreload"))
 		{
@@ -3153,6 +3155,7 @@ public class GriefPrevention extends JavaPlugin
 		AddLogEntry("GriefPrevention disabled.");
 	}
 	
+	/*
 	//called when a player spawns, applies protection for that player if necessary
 	public void checkPvpProtectionNeeded(Player player)
 	{
@@ -3179,10 +3182,11 @@ public class GriefPrevention extends JavaPlugin
     		GriefPrevention.sendMessage(player, TextMode.Success, Messages.PvPImmunityStart, 5L);
     		
     		//start a task to re-check this player's inventory every minute until his immunity is gone
-    		PvPImmunityValidationTask task = new PvPImmunityValidationTask(player);
-    		this.getServer().getScheduler().scheduleSyncDelayedTask(this, task, 1200L);
+    		//mde PvPImmunityValidationTask task = new PvPImmunityValidationTask(player);
+    		//mde this.getServer().getScheduler().scheduleSyncDelayedTask(this, task, 1200L);
 		}
 	}
+	*/
 	
 	static boolean isInventoryEmpty(Player player)
 	{
@@ -3206,10 +3210,10 @@ public class GriefPrevention extends JavaPlugin
     }
 
     //checks whether players siege in a world
-	public boolean siegeEnabledForWorld(World world)
-	{
-		return this.config_siege_enabledWorlds.contains(world);
-	}
+	//public boolean siegeEnabledForWorld(World world)
+	//{
+//		return this.config_siege_enabledWorlds.contains(world);
+//	}
 
 	//moves a player from the claim he's in to a nearby wilderness location
 	public Location ejectPlayer(Player player)
@@ -3510,24 +3514,24 @@ public class GriefPrevention extends JavaPlugin
         return result;
     }
 
-    public boolean containsBlockedIP(String message)
-    {
-        message = message.replace("\r\n", "");
-        Pattern ipAddressPattern = Pattern.compile("([0-9]{1,3}\\.){3}[0-9]{1,3}");
-        Matcher matcher = ipAddressPattern.matcher(message);
+//    public boolean containsBlockedIP(String message)
+    //{
+        //message = message.replace("\r\n", "");
+        //Pattern ipAddressPattern = Pattern.compile("([0-9]{1,3}\\.){3}[0-9]{1,3}");
+        //Matcher matcher = ipAddressPattern.matcher(message);
         
         //if it looks like an IP address
-        if(matcher.find())
-        {
+        //if(matcher.find())
+        //{
             //and it's not in the list of allowed IP addresses
-            if(!GriefPrevention.instance.config_spam_allowedIpAddresses.contains(matcher.group()))
-            {
-                return true;
-            }
-        }
+            //if(!GriefPrevention.instance.config_spam_allowedIpAddresses.contains(matcher.group()))
+            //{
+                //return true;
+            //}
+        //}
         
-        return false;
-    }
+        //return false;
+    //}
     
     void autoExtendClaim(Claim newClaim)
     {
@@ -3550,12 +3554,12 @@ public class GriefPrevention extends JavaPlugin
         Bukkit.getScheduler().runTaskAsynchronously(GriefPrevention.instance, new AutoExtendClaimTask(newClaim, snapshots, world.getEnvironment()));
     }
 
-    public boolean pvpRulesApply(World world)
-    {
-        Boolean configSetting = this.config_pvp_specifiedWorlds.get(world);
-        if(configSetting != null) return configSetting;
-        return world.getPVP();
-    }
+    //public boolean pvpRulesApply(World world)
+    //{
+        //Boolean configSetting = this.config_pvp_specifiedWorlds.get(world);
+        //if(configSetting != null) return configSetting;
+        //return world.getPVP();
+    //}
 
     public static boolean isNewToServer(Player player)
     {
@@ -3567,26 +3571,26 @@ public class GriefPrevention extends JavaPlugin
         return true;
     }
 
-    static void banPlayer(Player player, String reason, String source)
-    {
-        if(GriefPrevention.instance.config_ban_useCommand)
-        {
-            Bukkit.getServer().dispatchCommand(
-                Bukkit.getConsoleSender(),
-                GriefPrevention.instance.config_ban_commandFormat.replace("%name%", player.getName()).replace("%reason%", reason));
-        }
-        else
-        {
-            BanList bans = Bukkit.getServer().getBanList(Type.NAME);
-            bans.addBan(player.getName(), reason, null, source);
+    //static void banPlayer(Player player, String reason, String source)
+    //{
+        //if(GriefPrevention.instance.config_ban_useCommand)
+        //{
+            //Bukkit.getServer().dispatchCommand(
+                //Bukkit.getConsoleSender(),
+                //GriefPrevention.instance.config_ban_commandFormat.replace("%name%", player.getName()).replace("%reason%", reason));
+        //}
+        //else
+        //{
+            //BanList bans = Bukkit.getServer().getBanList(Type.NAME);
+            //bans.addBan(player.getName(), reason, null, source);
         
             //kick
-            if(player.isOnline())
-            {
-                player.kickPlayer(reason);
-            }
-        }
-    }
+//            if(player.isOnline())
+            //{
+                //player.kickPlayer(reason);
+            //}
+        //}
+    //}
 
     public ItemStack getItemInHand(Player player, EquipmentSlot hand)
     {
@@ -3594,12 +3598,12 @@ public class GriefPrevention extends JavaPlugin
         return player.getInventory().getItemInMainHand();
     }
 
-    public boolean claimIsPvPSafeZone(Claim claim)
-    {
-        return claim.isAdminClaim() && claim.parent == null && GriefPrevention.instance.config_pvp_noCombatInAdminLandClaims ||
-                claim.isAdminClaim() && claim.parent != null && GriefPrevention.instance.config_pvp_noCombatInAdminSubdivisions ||
-               !claim.isAdminClaim() && GriefPrevention.instance.config_pvp_noCombatInPlayerLandClaims;
-    }
+    //public boolean claimIsPvPSafeZone(Claim claim)
+    //{
+        //return claim.isAdminClaim() && claim.parent == null && GriefPrevention.instance.config_pvp_noCombatInAdminLandClaims ||
+                //claim.isAdminClaim() && claim.parent != null && GriefPrevention.instance.config_pvp_noCombatInAdminSubdivisions ||
+               //!claim.isAdminClaim() && GriefPrevention.instance.config_pvp_noCombatInPlayerLandClaims;
+    //}
 
     /*
     protected boolean isPlayerTrappedInPortal(Block block)

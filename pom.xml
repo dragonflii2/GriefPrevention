@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.ryanhamshire</groupId>
-    <artifactId>GriefPrevention</artifactId>
+    <artifactId>GriefPreventionX</artifactId>
     <version>16.6</version>
     <properties>
         <maven.compiler.source>1.6</maven.compiler.source>

@@ -123,11 +123,11 @@ public class BlockEventHandler implements Listener
 		String signMessage = lines.toString();
 		
 		//prevent signs with blocked IP addresses 
-		if(!player.hasPermission("griefprevention.spam") && GriefPrevention.instance.containsBlockedIP(signMessage))
-        {
-            event.setCancelled(true);
-            return;
-        }
+		//if(!player.hasPermission("griefprevention.spam") && GriefPrevention.instance.containsBlockedIP(signMessage))
+        //{
+            //event.setCancelled(true);
+            //return;
+        //}
 		
 		PlayerData playerData = this.dataStore.getPlayerData(player.getUniqueId());
 		//if not empty and wasn't the same as the last sign, log it and remember it for later
@@ -187,21 +187,22 @@ public class BlockEventHandler implements Listener
 		//FEATURE: limit fire placement, to prevent PvP-by-fire
 		
 		//if placed block is fire and pvp is off, apply rules for proximity to other players 
-		if(block.getType() == Material.FIRE && (!GriefPrevention.instance.pvpRulesApply(block.getWorld()) || !GriefPrevention.instance.config_pvp_allowFireNearPlayers))
-		{
-			List<Player> players = block.getWorld().getPlayers();
-			for(int i = 0; i < players.size(); i++)
-			{
-				Player otherPlayer = players.get(i);
-				Location location = otherPlayer.getLocation();
-				if(!otherPlayer.equals(player) && location.distanceSquared(block.getLocation()) < 9)
-				{
-					GriefPrevention.sendMessage(player, TextMode.Err, Messages.PlayerTooCloseForFire2);
-					placeEvent.setCancelled(true);
-					return;
-				}					
-			}
-		}
+		//if(block.getType() == Material.FIRE && (!GriefPrevention.instance.pvpRulesApply(block.getWorld()) || !GriefPrevention.instance.config_pvp_allowFireNearPlayers))
+		//if(block.getType() == Material.FIRE)
+		//{
+//			List<Player> players = block.getWorld().getPlayers();
+			//for(int i = 0; i < players.size(); i++)
+			//{
+//				Player otherPlayer = players.get(i);
+				//Location location = otherPlayer.getLocation();
+				//if(!otherPlayer.equals(player) && location.distanceSquared(block.getLocation()) < 9)
+				//{
+//					GriefPrevention.sendMessage(player, TextMode.Err, Messages.PlayerTooCloseForFire2);
+					//placeEvent.setCancelled(true);
+					//return;
+				//}					
+			//}
+		//}
 		
 		//don't track in worlds where claims are not enabled
         if(!GriefPrevention.instance.claimsEnabledForWorld(placeEvent.getBlock().getWorld())) return;
@@ -223,7 +224,8 @@ public class BlockEventHandler implements Listener
 		    playerData.lastClaim = claim;
 		    
 			//warn about TNT not destroying claimed blocks
-            if(block.getType() == Material.TNT && !claim.areExplosivesAllowed && playerData.siegeData == null)
+            //mde if(block.getType() == Material.TNT && !claim.areExplosivesAllowed && playerData.siegeData == null)
+            if(block.getType() == Material.TNT && !claim.areExplosivesAllowed)            	
             {
                 GriefPrevention.sendMessage(player, TextMode.Warn, Messages.NoTNTDamageClaims);
                 GriefPrevention.sendMessage(player, TextMode.Instr, Messages.ClaimExplosivesAdvertisement);
@@ -312,25 +314,25 @@ public class BlockEventHandler implements Listener
 			}
 			
 			//check to see if this chest is in a claim, and warn when it isn't
-			if(GriefPrevention.instance.config_claims_preventTheft && this.dataStore.getClaimAt(block.getLocation(), false, playerData.lastClaim) == null)
-			{
-				GriefPrevention.sendMessage(player, TextMode.Warn, Messages.UnprotectedChestWarning);				
-			}
+			//if(GriefPrevention.instance.config_claims_preventTheft && this.dataStore.getClaimAt(block.getLocation(), false, playerData.lastClaim) == null)
+			//{
+//				GriefPrevention.sendMessage(player, TextMode.Warn, Messages.UnprotectedChestWarning);				
+			//}
 		}
 		
 		//FEATURE: limit wilderness tree planting to grass, or dirt with more blocks beneath it
-		else if(block.getType() == Material.SAPLING && GriefPrevention.instance.config_blockSkyTrees && GriefPrevention.instance.claimsEnabledForWorld(player.getWorld()))
-		{
-			Block earthBlock = placeEvent.getBlockAgainst();
-			if(earthBlock.getType() != Material.GRASS)
-			{
-				if(earthBlock.getRelative(BlockFace.DOWN).getType() == Material.AIR || 
-				   earthBlock.getRelative(BlockFace.DOWN).getRelative(BlockFace.DOWN).getType() == Material.AIR)
-				{
-					placeEvent.setCancelled(true);
-				}
-			}
-		}	
+		//else if(block.getType() == Material.SAPLING && GriefPrevention.instance.config_blockSkyTrees && GriefPrevention.instance.claimsEnabledForWorld(player.getWorld()))
+		//{
+//			Block earthBlock = placeEvent.getBlockAgainst();
+			//if(earthBlock.getType() != Material.GRASS)
+			//{
+//				if(earthBlock.getRelative(BlockFace.DOWN).getType() == Material.AIR || 
+				   //earthBlock.getRelative(BlockFace.DOWN).getRelative(BlockFace.DOWN).getType() == Material.AIR)
+				//{
+//					placeEvent.setCancelled(true);
+				//}
+			//}
+		//}	
 		
 		//FEATURE: warn players when they're placing non-trash blocks outside of their claimed areas
 		else if(!this.trashBlocks.contains(block.getType()) && GriefPrevention.instance.claimsEnabledForWorld(block.getWorld()))
@@ -366,8 +368,8 @@ public class BlockEventHandler implements Listener
 		if(	GriefPrevention.instance.config_blockSurfaceOtherExplosions && block.getType() == Material.TNT &&
 			block.getWorld().getEnvironment() != Environment.NETHER &&
 			block.getY() > GriefPrevention.instance.getSeaLevel(block.getWorld()) - 5 &&
-			claim == null &&
-			playerData.siegeData == null)
+			claim == null)
+			//mde && playerData.siegeData == null)
 		{
 			GriefPrevention.sendMessage(player, TextMode.Warn, Messages.NoTNTDamageAboveSeaLevel);
 		}

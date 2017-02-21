@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import me.ryanhamshire.GriefPrevention.Claim;
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
 import me.ryanhamshire.GriefPrevention.ShovelMode;
-import me.ryanhamshire.GriefPrevention.SiegeData;
+//mde import me.ryanhamshire.GriefPrevention.SiegeData;
 import me.ryanhamshire.GriefPrevention.Visualization;
 
 import org.bukkit.Bukkit;
@@ -98,7 +98,7 @@ public class PlayerData
 	public Claim lastClaim = null;
 	
 	//siege
-	public SiegeData siegeData = null;
+	//mde public SiegeData siegeData = null;
 	
 	//pvp
 	public long lastPvpTimestamp = 0;
@@ -148,11 +148,11 @@ public class PlayerData
 		
 		long elapsed = now - this.lastPvpTimestamp;
 		
-		if(elapsed > GriefPrevention.instance.config_pvp_combatTimeoutSeconds * 1000) //X seconds
-		{
-			this.lastPvpTimestamp = 0;
-			return false;
-		}
+		//if(elapsed > GriefPrevention.instance.config_pvp_combatTimeoutSeconds * 1000) //X seconds
+		//{
+//			this.lastPvpTimestamp = 0;
+			//return false;
+		//}
 		
 		return true;
 	}
